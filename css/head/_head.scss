@@ -1,0 +1,37 @@
+.header {
+    .row {
+        justify-content: center;
+        .icons {
+            @extend %flexcenter;
+            justify-content: space-evenly;
+            margin-bottom: $padding - 30;
+            >span:last-of-type {
+                @extend %burger;
+            }
+            span {
+                position: relative;
+                height: fit-content;
+                img+span {
+                    @include dim(($padding - 30), ($padding - 30));
+                    background-color: $black;
+                    position: absolute;
+                    top: -($padding / 5);
+                    color: $white;
+                    text-align: center;
+                    border-radius: 50%;
+                }
+            }
+        }
+        .logo {
+            @include dim(100%, 100%);
+            text-align: center;
+            margin-bottom: $padding - 30;
+        }
+        .search {
+            @extend %search;
+        }
+    }
+    hr {
+        @extend %hr;
+    }
+}

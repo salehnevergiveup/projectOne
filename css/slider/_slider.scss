@@ -1,0 +1,86 @@
+.slider {
+    @include dim(100%, ($padding * 12));
+    position: relative;
+    overflow: hidden;
+    video {
+        @include dim(100%, ($padding * 13.5));
+        position: absolute;
+        top: -10%;
+        z-index: -1;
+        object-fit: cover;
+    }
+    .cover {
+        @include dim(100%, 100%);
+        background-color: $green1;
+        @extend %absloutcenter;
+        top: 0;
+        left: 0;
+        opacity: .5;
+    }
+    .row {
+        justify-content: center;
+        .text {
+            @extend %absloutcenter;
+            transform: translate(-50%, -50%);
+            h2 {
+                font-weight: 400;
+                letter-spacing: $padding / 10;
+                span {
+                    font-family: $alex;
+                    font-size: $padding + 20;
+                }
+            }
+            h1 {
+                position: relative;
+                font-family: $web;
+                font-size: clamp(20px, 6vw, 124px);
+                font-weight: 400;
+                text-transform: uppercase;
+                margin-bottom: $padding - 30;
+                span {
+                    @extend %absloutcenter;
+                    top: 0;
+                    left: 100%;
+                    font-size: $padding / 2;
+                }
+            }
+            p {
+                @include dim(0, 0);
+                border-bottom: ($padding / 25) solid #000;
+            }
+        }
+        .number {
+            @include dim(100%, 100%);
+            @extend %absloutcenter;
+            padding-right: $padding / 5;
+            top: 0;
+            left: 0;
+            @extend %flexcenter;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            font-size: $padding - 34;
+            span:nth-of-type(2) {
+                position: relative;
+                width: $padding;
+                color: $white;
+                text-align: right;
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    display: block;
+                    height: $padding / 25;
+                    background-color: $blueblack;
+                }
+                &::after {
+                    top: 100%;
+                    width: 70%;
+                    right: 0;
+                    transform: translateY(-100%);
+                }
+            }
+        }
+    }
+}

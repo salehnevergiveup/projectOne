@@ -1,0 +1,167 @@
+//features start
+.features {
+    .row {
+        justify-content: space-between;
+        .round {
+            @include dim(100%, ($padding * 12));
+            @extend %flexcenter;
+            align-items: flex-end;
+            >span {
+                @include dim(($padding * 4), ($padding * 4));
+                background-color: $pink;
+                @extend %flexcenter;
+                flex-direction: column;
+                color: $white;
+                font-size: $padding;
+                border-radius: 50%;
+                p {
+                    @include dim(70%, ($padding / 2));
+                    color: $black;
+                    font-size: $padding - 24;
+                    text-align: right;
+                }
+            }
+        }
+        .feature {
+            @include dim(100%, ($padding * 12));
+            background-color: #8ed1b7;
+            position: relative;
+            h2 {
+                @extend %absloutcenter;
+                top: 10%;
+                transform: translateX(-48%);
+                font-size: clamp(2rem, 4vw, 6rem);
+                text-transform: capitalize;
+                letter-spacing: $padding - 16;
+                opacity: 0.4;
+            }
+            .dot {
+                @include dim(($padding * 2), ($padding * 11));
+                background-image: url("../images/Rectangle 3.png");
+                position: relative;
+                top: 8%;
+                left: -10%;
+                z-index: -1;
+                font-weight: bold;
+                span {
+                    display: block;
+                    @extend %absloutcenter;
+                    left: 100%;
+                    transform: rotate( -90deg) translate(8%, -960%);
+                    font-size: $padding - 26;
+                    font-weight: bold;
+                    text-transform: capitalize;
+                    letter-spacing: $padding - 18;
+                    white-space: nowrap;
+                }
+            }
+            .lava {
+                @include dim(68%,
+                60%);
+                background-image: url("../images/Rectangle2.png");
+                @extend %absloutcenter;
+                top: 48%;
+                left: 100%;
+                transform: translate(-100%, -51%);
+                z-index: 1;
+            }
+            .text {
+                width: 50%;
+                @extend %absloutcenter;
+                left: 5%;
+                z-index: 2;
+                transform: translatey(-50%);
+                div {
+                    margin-bottom: $padding / 5;
+                    h4 {
+                        color: $white;
+                        font-size: $padding - 38;
+                        text-transform: uppercase;
+                    }
+                    h4+p {
+                        width: 100%;
+                        color: $black;
+                        text-transform: capitalize;
+                        font-weight: bold;
+                        padding: ($padding / 10) 0;
+                    }
+                    p {
+                        width: 150%;
+                        background-color: #8ed1b7;
+                        color: $white;
+                    }
+                    a {
+                        color: $white;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 786px) and (max-width: 991px) {
+    .features {
+        .row {
+            .feature {
+                .dot {
+                    span {
+                        transform: rotate( -90deg) translate(8%, -1020%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 785px) {
+    .features {
+        .row {
+            justify-content: center;
+            .round {
+                align-items: center;
+            }
+            .feature {
+                h2 {
+                    font-size: $padding - 20;
+                    letter-spacing: $padding - 35;
+                }
+                .dot {
+                    span {
+                        left: 65%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//feature end
+//  section start
+.section {
+    background-color: $black;
+    color: $white;
+    text-align: center;
+    .row {
+        @extend %flexcenter;
+        .icon {
+            @include dim(100%,
+            ( $padding * 2));
+            padding: ($padding/ 5) 0;
+            margin-top: $padding -30;
+        }
+        h4 {
+            font-family: $web;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: $padding / 12;
+            margin-bottom: $padding / 10;
+        }
+        p {
+            color: #767676;
+            font-size: $padding - 36;
+        }
+    }
+}
+
+//  section end

@@ -1,0 +1,79 @@
+// grid system start
+@mixin padwid($width, $Pright, $Pleft) {
+    width: $width;
+    padding-right: $Pright;
+    padding-left: $Pleft;
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        @include padwid( ((100% * $i) /12), 15px, 15px);
+    }
+}
+
+$coninerWidth: 100%;
+.container {
+    @include padwid($coninerWidth, 15px, 15px);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+//small screen start
+@media (min-width: 576px) {
+    @for $i from 1 through 12 {
+        .col-sm-#{$i} {
+            @include padwid( ((100% * $i) /12), 15px, 15px);
+        }
+    }
+}
+
+//small screen end
+//medium screen start
+@media (min-width: 786px) {
+    @for $i from 1 through 12 {
+        .col-md-#{$i} {
+            @include padwid( ((100% * $i) /12), 15px, 15px);
+        }
+    }
+    $coninerWidth: 720px;
+    .container {
+        @include padwid($coninerWidth, 0, 0);
+        margin: 0 auto;
+    }
+}
+
+//medium screen end
+//larg  screen start
+@media (min-width: 922px) {
+    @for $i from 1 through 12 {
+        .col-lg-#{$i} {
+            @include padwid( ((100% * $i) /12), 15px, 15px);
+        }
+    }
+    $coninerWidth: 960px;
+    .container {
+        @include padwid($coninerWidth, 0, 0);
+        margin: 0 auto;
+    }
+}
+
+//larg screen end
+//extra larg  screen start
+@media (min-width: 1200px) {
+    @for $i from 1 through 12 {
+        .col-xl-#{$i} {
+            @include padwid( ((100% * $i) /12), 15px, 15px);
+        }
+    }
+    $coninerWidth: 1140px;
+    .container {
+        @include padwid($coninerWidth, 0, 0);
+        margin: 0 auto;
+    }
+}
+
+//extra larg screen end
+// grid system end

@@ -1,0 +1,17 @@
+.nav {
+    padding-top: 0;
+    .row {
+        @extend %flexcenter;
+        ul {
+            @extend %flexcenter;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            li {
+                a {
+                    @extend %a;
+                    margin: $padding / 5;
+                }
+            }
+        }
+    }
+}

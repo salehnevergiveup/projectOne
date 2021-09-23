@@ -1,0 +1,191 @@
+.footer {
+    position: relative;
+    .row {
+        justify-content: center;
+        .shopx {
+            color: #7b7c85;
+            margin: ($padding - 20) 0;
+            line-height: 1.7;
+            p {
+                letter-spacing: 1px;
+                margin: ($padding / 2) 0;
+            }
+            a {
+                color: #7b7c85;
+                span {
+                    font-weight: bold;
+                    font-size: $padding - 30;
+                    letter-spacing: -3px;
+                }
+            }
+        }
+        .useful {
+            margin-bottom: $padding - 20;
+            h4 {
+                color: #1d1e24;
+                font-size: $padding - 32;
+                font-weight: bold;
+                font-family: $web;
+                text-transform: capitalize;
+                white-space: nowrap;
+                margin-left: $padding / 2;
+            }
+            ul {
+                white-space: nowrap;
+                li {
+                    padding: ($padding - 30) 0;
+                    a {
+                        color: $black;
+                        font-size: $padding - 38;
+                        opacity: .8;
+                        transition: all .5s ease-in-out;
+                        span {
+                            margin-right: $padding / 10;
+                        }
+                        &:hover {
+                            font-size: $padding - 35;
+                            margin-left: $padding - 35;
+                            transition: all .5s ease-in-out;
+                        }
+                    }
+                }
+            }
+            .line-2 {
+                margin-top: $padding - 24;
+            }
+        }
+        .instagram {
+            h4 {
+                color: #1d1e24;
+                font-size: $padding - 32;
+                font-family: $web;
+                text-transform: capitalize;
+                img {
+                    margin-right: $padding / 10;
+                }
+            }
+            .photos {
+                margin-top: $padding - 30;
+                transition: all 1s ease-in-out;
+                .col-3 {
+                    padding: 0 $padding / 10;
+                }
+                .pic {
+                    .photo {
+                        @include dim(100%, ($padding * 2));
+                        top: 180px;
+                        left: 0;
+                        margin-bottom: $padding / 5;
+                        img {
+                            @include dim(100%, 100%);
+                        }
+                    }
+                    &:hover {
+                        @include dim(100%, 100%);
+                        @extend %flexcenter;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        transition: all 1s ease-in-out;
+                    }
+                    &:hover .photo {
+                        animation: photo 2s ease-in-out;
+                        animation-fill-mode: forwards;
+                    }
+                    @keyframes photo {
+                        0% {
+                            opacity: 0;
+                        }
+                        50% {
+                            @include dim(50%, 80%);
+                            opacity: 0;
+                        }
+                        100% {
+                            @include dim(50%, 80%);
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 786px) and (max-width: 991px) {
+    .footer {
+        .row {
+            .instagram {
+                .photos {
+                    .pic {
+                        @keyframes photo {
+                            0% {
+                                opacity: 0;
+                            }
+                            50% {
+                                @include dim(70%, 70%);
+                                opacity: 0;
+                            }
+                            100% {
+                                @include dim(70%, 70%);
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 785px) {
+    .footer {
+        .row {
+            .instagram {
+                .photos {
+                    .pic {
+                        @keyframes photo {
+                            0% {
+                                opacity: 0;
+                            }
+                            50% {
+                                @include dim(70%, 40%);
+                                opacity: 0;
+                            }
+                            100% {
+                                @include dim(70%, 40%);
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            .useful {
+                h4 {
+                    text-align: center;
+                }
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
+
+hr {
+    @extend %hr;
+}
+
+.bg {
+    .row {
+        justify-content: space-between;
+        .text {
+            @include dim(100%, 100%);
+            @extend %flexcenter;
+            p {
+                color: $black;
+                font-family: $lato;
+            }
+        }
+    }
+}
